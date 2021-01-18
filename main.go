@@ -57,6 +57,7 @@ func main() {
 	routes.FoodRoutes(router)
 	routes.MenuRoutes(router)
 	routes.TableRoutes(router)
+	routes.OrderRoutes(router)
 
 	router.Run(":" + port)
 }
