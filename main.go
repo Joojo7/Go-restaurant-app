@@ -58,6 +58,7 @@ func main() {
 	routes.MenuRoutes(router)
 	routes.TableRoutes(router)
 	routes.OrderRoutes(router)
+	routes.OrderItemRoutes(router)
 
 	router.Run(":" + port)
 }
