@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -16,7 +15,6 @@ var foodCollection *mongo.Collection = database.OpenCollection(database.Client, 
 
 func main() {
 	port := os.Getenv("PORT")
-	fmt.Print(port)
 
 	if port == "" {
 		port = "8000"
@@ -31,6 +29,7 @@ func main() {
 	routes.OrderRoutes(router)
 	routes.OrderItemRoutes(router)
 	routes.InvoiceRoutes(router)
+	routes.UserRoutes(router)
 
 	router.Run(":" + port)
 }
