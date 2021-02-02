@@ -23,6 +23,7 @@ func main() {
 
 	router := gin.New()
 	router.Use(gin.Logger())
+	routes.UserRoutes(router)
 
 	router.Use(middleware.Authentication())
 
@@ -32,7 +33,6 @@ func main() {
 	routes.OrderRoutes(router)
 	routes.OrderItemRoutes(router)
 	routes.InvoiceRoutes(router)
-	routes.UserRoutes(router)
 
 	router.Run(":" + port)
 }
